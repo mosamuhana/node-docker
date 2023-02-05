@@ -1,0 +1,28 @@
+{
+  "name": "node-docker",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon -L index.js",
+    "dev:up": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
+    "dev:down": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml down",
+    "_postdev:up": "docker volume prune --force"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-redis": "^6.1.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.0",
+    "redis": "^4.6.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
